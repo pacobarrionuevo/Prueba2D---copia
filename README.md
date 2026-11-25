@@ -1,3 +1,9 @@
+# IMAGEN
+<img width="1902" height="951" alt="image" src="https://github.com/user-attachments/assets/41143dd4-57a0-4846-93af-48c541efaf06" />
+
+
+
+
 # Cómo clonar un repositorio de GitHub usando GitHub Desktop
 
 Clonar un repositorio significa descargar una copia completa de ese proyecto desde GitHub a tu ordenador para poder trabajar en él localmente. 
