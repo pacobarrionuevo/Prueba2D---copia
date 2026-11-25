@@ -1,3 +1,4 @@
+using System; // <--
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,11 @@ public abstract class Character : MonoBehaviour
 
     public float CurrentHealth { get; private set; }
     public bool IsDead { get; private set; }
+
+    //          currentHealth  maxHealth
+    public event Action<float, float> OnHealthChanged;
+
+    public event Action OnDeath;
     
 
     protected virtual void Awake()
@@ -25,10 +31,12 @@ public abstract class Character : MonoBehaviour
 
         Debug.Log(CurrentHealth);
 
+        OnHealthChanged.Invoke(CurrentHealth, MaxHealth);
+
         if (CurrentHealth <= 0f)
         {
             IsDead = true;
-
+            OnDeath.Invoke();
             Die();
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class PlayerController : Character
 {
@@ -136,7 +137,6 @@ public class PlayerController : Character
         canDash = true;
 
     }
-
     protected override void Die()
     {
         Debug.Log("Player se ha muerto");
