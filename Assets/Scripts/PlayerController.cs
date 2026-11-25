@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Character
 {
     private float horizontal;
     private float speed = 8f;
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TrailRenderer tr;
 
 
-    private void Awake()
+    private void Start()
     {
         if (Instance == null)
         {
@@ -135,5 +135,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
 
+    }
+
+    protected override void Die()
+    {
+        Debug.Log("Player se ha muerto");
     }
 }
